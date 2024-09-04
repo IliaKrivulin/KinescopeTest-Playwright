@@ -25,4 +25,17 @@ await page.getByPlaceholder('Введите название токена').clic
 await page.getByPlaceholder('Введите название токена').fill('TestToken');
 await page.locator('div:nth-child(4) > svg > rect').first().click();
 await page.getByRole('button', { name: 'Создать' }).click();
+/*
+await page.getByPlaceholder(mailInputField).click();
+await page.getByPlaceholder(mailInputField).fill('fcz-sbg@mail.ru');
+await page.getByPlaceholder(passwordInputField).click();
+await page.getByPlaceholder(passwordInputField).fill('TestTest2024');
+await page.getByPlaceholder(loginButton).click();
+await page.getByPlaceholder(newToken).click();
+await page.getByPlaceholder(tokenNameInputFiel).click();
+await page.getByPlaceholder(tokenNameInputFiel).fill('TestToken');
+await page.getByPlaceholder(checkboxUploadFiles).check();
+await page.getByPlaceholder(createButton).click();
+expect(tokenText).toContainText('TestToken')
+*/
 });

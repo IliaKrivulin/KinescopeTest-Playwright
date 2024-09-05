@@ -11,8 +11,8 @@ const newToken = 'button._nx1rfy._djcgxs._11mzpns._66v09m._aoryu9' //кнопк�
 const tokenNameInputField = 'input._18e59hr._18946ds.undefined' //Поле ввода названия токена
 const checkboxUploadFiles = 'div._tl66x3 > div._1upu3gu_e93ein._fydy30:nth-child(4) > svg' //чекбокс "Загружать файлы"
 const createButton = 'input._18e59hr._18946ds.undefined' //кнопка "Создать"
-const tokenText = 'div._eg0904:nth-of-type(1)' //текст названия токена
-
+const tokenText = 'div._1xspbv5 > div._1bdq89a._1sw6t2s > div._1xiwm8f._1w45odf.column__left.false.false > div._14h9chf > div[style="--v1o16zda_2: 14px; --v1o16zda_3: 21px; --v1o16zda_4: #111111;"]' //текст названия токена
+const tokenLocator = page.locator(tokenText); //токен
 
 await page.goto('https://app.kinescope.io/workspace/api_token');
 await page.getByPlaceholder('Work email').click();
@@ -25,17 +25,5 @@ await page.getByPlaceholder('Введите название токена').clic
 await page.getByPlaceholder('Введите название токена').fill('TestToken');
 await page.locator('div:nth-child(4) > svg > rect').first().click();
 await page.getByRole('button', { name: 'Создать' }).click();
-/*
-await page.getByPlaceholder(mailInputField).click();
-await page.getByPlaceholder(mailInputField).fill('fcz-sbg@mail.ru');
-await page.getByPlaceholder(passwordInputField).click();
-await page.getByPlaceholder(passwordInputField).fill('TestTest2024');
-await page.getByPlaceholder(loginButton).click();
-await page.getByPlaceholder(newToken).click();
-await page.getByPlaceholder(tokenNameInputFiel).click();
-await page.getByPlaceholder(tokenNameInputFiel).fill('TestToken');
-await page.getByPlaceholder(checkboxUploadFiles).check();
-await page.getByPlaceholder(createButton).click();
-expect(tokenText).toContainText('TestToken')
-*/
+await expect(tokenLocator).toContainText('TestToken'); 
 });
